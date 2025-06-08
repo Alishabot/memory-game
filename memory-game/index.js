@@ -16,7 +16,7 @@ function createCard(value, idx, flipped, matched, onClick) {
   btn.className = 'memory-card' + (flipped ? ' flipped' : '') + (matched ? ' matched' : '');
   btn.disabled = flipped || matched;
   btn.tabIndex = 0;
-  btn.setAttribute('aria-label', 'Memory card');
+  btn.setAttribute('aria-label', 'memory-card');
   btn.innerHTML = flipped || matched ? value : '';
   btn.onclick = onClick;
   return btn;
@@ -33,7 +33,6 @@ function MemoryGame() {
   let useIcons = true;
   let cards = [];
   let flipped = [];
-  let matched = [];
   let moves = 0;
   let timer = 0;
   let interval = null;

@@ -1,0 +1,8 @@
+memory-game/
+├── index.html
+├── package.json
+├── vite.config.js         // (if present)
+├── src/
+│   ├── main.jsx
+│   └── ...other files
+└── ...other config files
