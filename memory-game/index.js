@@ -1,4 +1,4 @@
-import { ICONS } from './icons.js';
+import { ICONS } from './dist/icons.js';
 
 const root = document.getElementById('root');
 
