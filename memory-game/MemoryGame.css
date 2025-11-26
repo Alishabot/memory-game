@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f0f5f5;
+  background: linear-gradient(135deg, #1a8a8f 0%, #2d6e72 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,16 +10,108 @@ body {
 }
 
 #root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Setup Screen */
+.memory-setup {
+  text-align: center;
+  width: 100%;
+}
+
+.memory-setup-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 60px 0;
+  letter-spacing: -2px;
+}
+
+.memory-setup-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 32px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.memory-setup-section {
+  margin-bottom: 40px;
+}
+
+.memory-setup-section h2 {
+  font-size: 1.3rem;
+  color: #2d6e72;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.memory-setup-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.memory-theme-btn,
+.memory-grid-btn {
+  padding: 12px 36px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #d4e8e8;
+  color: #666;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.memory-theme-btn:hover,
+.memory-grid-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 138, 143, 0.2);
+}
+
+.memory-theme-btn.active,
+.memory-grid-btn.active {
+  background: #a8d8d8;
+  color: #1a8a8f;
+  font-weight: 700;
+}
+
+.memory-start-btn {
+  width: 100%;
+  padding: 16px;
+  background: #a8d8d8;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.memory-start-btn:hover {
+  background: #8bc9cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 138, 143, 0.3);
+}
+
+/* Game Container */
+.memory-game-container {
   max-width: 700px;
   width: 100%;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   padding: 40px;
-}
-
-.memory-game {
-  width: 100%;
 }
 
 .memory-header {
@@ -44,8 +136,7 @@ body {
   gap: 12px;
 }
 
-.memory-restart-btn,
-.memory-new-game-btn {
+.memory-restart-btn {
   border: none;
   padding: 12px 28px;
   font-size: 1rem;
@@ -53,10 +144,6 @@ body {
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-transform: capitalize;
-}
-
-.memory-restart-btn {
   background: #1a8a8f;
   color: #ffffff;
 }
@@ -68,21 +155,6 @@ body {
 }
 
 .memory-restart-btn:active {
-  transform: translateY(0);
-}
-
-.memory-new-game-btn {
-  background: #e8e8e8;
-  color: #333333;
-}
-
-.memory-new-game-btn:hover {
-  background: #d8d8d8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.memory-new-game-btn:active {
   transform: translateY(0);
 }
 
@@ -253,6 +325,19 @@ body {
 
 @media (max-width: 768px) {
   #root {
+    min-height: auto;
+  }
+
+  .memory-setup-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .memory-setup-container {
+    padding: 32px 24px;
+  }
+
+  .memory-game-container {
     max-width: 95vw;
     padding: 24px;
   }
@@ -273,8 +358,7 @@ body {
     justify-content: flex-start;
   }
 
-  .memory-restart-btn,
-  .memory-new-game-btn {
+  .memory-restart-btn {
     flex: 1;
   }
 
@@ -297,7 +381,15 @@ body {
 }
 
 @media (max-width: 480px) {
-  #root {
+  .memory-setup-title {
+    font-size: 2rem;
+  }
+
+  .memory-setup-container {
+    padding: 24px 16px;
+  }
+
+  .memory-game-container {
     padding: 16px;
   }
 
@@ -327,8 +419,7 @@ body {
     flex-direction: column;
   }
 
-  .memory-restart-btn,
-  .memory-new-game-btn {
+  .memory-restart-btn {
     width: 100%;
   }
 
