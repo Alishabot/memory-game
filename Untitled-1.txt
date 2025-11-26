@@ -1,0 +1,18 @@
+memory-game/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   └── MemoryGame.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── App.css
+│
+├── package.json
+├── vite.config.js
+├── README.md
+└── node_modules/
