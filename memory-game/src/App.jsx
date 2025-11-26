@@ -223,7 +223,6 @@ function App() {
         {gameWon && <span className="memory-win">🎉 You Won!</span>}
       </div>
     </div>
-    </div>
   )
 }
 
